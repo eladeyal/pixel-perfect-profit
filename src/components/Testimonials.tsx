@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Star, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Star, ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Testimonials = () => {
@@ -36,23 +36,33 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-24 md:py-32 bg-white">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <span className="inline-block px-4 py-1 bg-brand-purple/10 text-brand-purple rounded-full mb-4 font-medium">
             חוות דעת
           </span>
-          <h2 className="heading-lg mb-4">מה הלקוחות אומרים</h2>
+          <h2 className="heading-lg mb-6">
+            <span className="text-gradient">מה הלקוחות</span> אומרים
+            <div className="h-1 w-24 bg-gradient-to-r from-brand-purple to-brand-teal rounded-full mx-auto mt-4"></div>
+          </h2>
           <p className="paragraph-lg text-brand-slate/80 max-w-3xl mx-auto">
             הסטנדרטים הגבוהים שלנו באים לידי ביטוי בחוויות המרוצות של לקוחותינו
           </p>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-brand-purple/5 to-brand-teal/5 rounded-2xl shadow-elegant p-8 md:p-12">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-6 bg-gradient-primary p-1">
-                <div className="w-full h-full rounded-full overflow-hidden">
+          <div className="premium-gradient rounded-2xl shadow-xl p-10 md:p-16">
+            <div className="absolute top-8 right-8 opacity-20">
+              <Quote size={60} className="text-brand-purple" />
+            </div>
+            <div className="absolute bottom-8 left-8 opacity-20">
+              <Quote size={60} className="text-brand-teal rotate-180" />
+            </div>
+            
+            <div className="flex flex-col items-center text-center relative z-10">
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-8 bg-gradient-to-r from-brand-purple to-brand-teal p-1">
+                <div className="w-full h-full rounded-full overflow-hidden bg-white">
                   <img 
                     src={testimonials[activeSlide].image} 
                     alt={testimonials[activeSlide].name}
@@ -61,38 +71,38 @@ const Testimonials = () => {
                 </div>
               </div>
 
-              <div className="flex mb-4">
+              <div className="flex mb-6">
                 {[...Array(5)].map((_, index) => (
                   <Star
                     key={index}
-                    size={20}
+                    size={24}
                     className={index < testimonials[activeSlide].rating ? "text-brand-teal fill-brand-teal" : "text-gray-300"}
                   />
                 ))}
               </div>
 
-              <p className="text-xl italic mb-6 rtl-text">"{testimonials[activeSlide].text}"</p>
+              <p className="text-2xl italic mb-8 rtl-text font-light">"{testimonials[activeSlide].text}"</p>
               
-              <h4 className="font-bold text-lg">{testimonials[activeSlide].name}</h4>
+              <h4 className="font-bold text-xl">{testimonials[activeSlide].name}</h4>
             </div>
           </div>
 
-          <div className="flex justify-center mt-8 gap-4">
+          <div className="flex justify-center mt-10 gap-4">
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant"
+              className="rounded-full border-2 border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant h-14 w-14"
               onClick={handlePrevSlide}
             >
-              <ArrowLeft size={20} />
+              <ArrowLeft size={24} />
             </Button>
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant"
+              className="rounded-full border-2 border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant h-14 w-14"
               onClick={handleNextSlide}
             >
-              <ArrowRight size={20} />
+              <ArrowRight size={24} />
             </Button>
           </div>
         </div>

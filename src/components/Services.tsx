@@ -50,13 +50,16 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white" id="services">
+    <section className="py-24 md:py-32 bg-white" id="services">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <span className="inline-block px-4 py-1 bg-brand-purple/10 text-brand-purple rounded-full mb-4 font-medium">
             השירותים שלנו
           </span>
-          <h2 className="heading-lg mb-4">פתרונות ניקיון מקצועיים</h2>
+          <h2 className="heading-lg mb-6 relative">
+            <span className="text-gradient">פתרונות ניקיון</span> מקצועיים
+            <div className="h-1 w-24 bg-gradient-to-r from-brand-purple to-brand-teal rounded-full mx-auto mt-4"></div>
+          </h2>
           <p className="paragraph-lg text-brand-slate/80 max-w-3xl mx-auto">
             אנו מציעים מגוון רחב של שירותי ניקיון מקצועיים, תוך שימוש בחומרים אקולוגיים וטכנולוגיה מתקדמת
           </p>
@@ -64,23 +67,28 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="service-card overflow-hidden group">
+            <div 
+              key={index} 
+              className="service-card overflow-hidden group"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               <div className="flex flex-col h-full">
-                <div className="mb-6 rounded-lg overflow-hidden">
+                <div className="mb-8 rounded-xl overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-64 object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                 </div>
                 <div className="flex-grow rtl-text">
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-brand-slate/80 mb-4">{service.description}</p>
-                  <ul className="space-y-2">
+                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-brand-slate/80 mb-6">{service.description}</p>
+                  <ul className="space-y-3">
                     {service.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-3">
-                        <CheckCircle size={18} className="text-brand-teal min-w-[18px]" />
-                        <span>{feature}</span>
+                        <CheckCircle size={20} className="text-brand-teal min-w-[20px]" />
+                        <span className="font-medium">{feature}</span>
                       </li>
                     ))}
                   </ul>

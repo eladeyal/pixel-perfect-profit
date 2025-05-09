@@ -25,59 +25,60 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-elegant py-2" : "bg-transparent py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? "bg-white/95 backdrop-blur-md shadow-elegant py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="container max-w-content mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <div className="font-display font-bold text-2xl text-brand-slate">
-            <span className="text-brand-purple">Imperial</span>Fresh
+          <div className="font-display font-bold text-2xl">
+            <span className="bg-gradient-to-r from-brand-purple to-brand-teal bg-clip-text text-transparent">Imperial</span>
+            <span className="text-brand-slate">Fresh</span>
           </div>
         </Link>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-10">
           <Link
             to="/"
-            className="font-medium text-brand-slate hover:text-brand-purple hover-underline"
+            className="font-medium text-brand-slate hover:text-brand-purple hover-underline transition-colors duration-300"
           >
             בית
           </Link>
           <Link
             to="/services"
-            className="font-medium text-brand-slate hover:text-brand-purple hover-underline"
+            className="font-medium text-brand-slate hover:text-brand-purple hover-underline transition-colors duration-300"
           >
             שירותים
           </Link>
           <Link
             to="/pricing"
-            className="font-medium text-brand-slate hover:text-brand-purple hover-underline"
+            className="font-medium text-brand-slate hover:text-brand-purple hover-underline transition-colors duration-300"
           >
             מחירים
           </Link>
           <Link
             to="/gallery"
-            className="font-medium text-brand-slate hover:text-brand-purple hover-underline"
+            className="font-medium text-brand-slate hover:text-brand-purple hover-underline transition-colors duration-300"
           >
             גלריה
           </Link>
           <Link
             to="/about"
-            className="font-medium text-brand-slate hover:text-brand-purple hover-underline"
+            className="font-medium text-brand-slate hover:text-brand-purple hover-underline transition-colors duration-300"
           >
             אודות
           </Link>
           <Link
             to="/contact"
-            className="font-medium text-brand-slate hover:text-brand-purple hover-underline"
+            className="font-medium text-brand-slate hover:text-brand-purple hover-underline transition-colors duration-300"
           >
             צור קשר
           </Link>
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Button className="bg-brand-purple hover:bg-brand-purple/90 text-white flex items-center gap-2">
+          <Button className="bg-gradient-to-r from-brand-purple to-brand-teal hover:from-brand-purple/90 hover:to-brand-teal/90 text-white flex items-center gap-3 py-6 px-6 rounded-xl shadow-lg shadow-brand-purple/20 hover:shadow-xl hover:shadow-brand-purple/30 transition-all duration-300">
             <Phone size={18} />
             <span className="font-medium">התקשרו עכשיו</span>
           </Button>
@@ -87,12 +88,12 @@ const Navbar = () => {
         <div className="md:hidden flex items-center">
           <button
             onClick={toggleMenu}
-            className="text-brand-slate hover:text-brand-purple focus:outline-none"
+            className="text-brand-slate hover:text-brand-purple focus:outline-none transition-colors duration-300"
           >
             {isMenuOpen ? (
-              <X size={28} />
+              <X size={30} />
             ) : (
-              <Menu size={28} />
+              <Menu size={30} />
             )}
           </button>
         </div>
@@ -100,51 +101,51 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md shadow-elegant absolute top-full left-0 right-0 py-4 px-4 z-50 animate-fade-in">
-          <nav className="flex flex-col space-y-4">
+        <div className="md:hidden bg-white/95 backdrop-blur-xl shadow-elegant absolute top-full left-0 right-0 py-6 px-6 z-50 animate-fade-in">
+          <nav className="flex flex-col space-y-5">
             <Link
               to="/"
               onClick={toggleMenu}
-              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right"
+              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right transition-colors duration-300"
             >
               בית
             </Link>
             <Link
               to="/services"
               onClick={toggleMenu}
-              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right"
+              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right transition-colors duration-300"
             >
               שירותים
             </Link>
             <Link
               to="/pricing"
               onClick={toggleMenu}
-              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right"
+              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right transition-colors duration-300"
             >
               מחירים
             </Link>
             <Link
               to="/gallery"
               onClick={toggleMenu}
-              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right"
+              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right transition-colors duration-300"
             >
               גלריה
             </Link>
             <Link
               to="/about"
               onClick={toggleMenu}
-              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right"
+              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right transition-colors duration-300"
             >
               אודות
             </Link>
             <Link
               to="/contact"
               onClick={toggleMenu}
-              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right"
+              className="font-medium text-brand-slate hover:text-brand-purple py-2 text-right transition-colors duration-300"
             >
               צור קשר
             </Link>
-            <Button className="bg-brand-purple hover:bg-brand-purple/90 text-white w-full flex items-center justify-center gap-2 mt-2">
+            <Button className="bg-gradient-to-r from-brand-purple to-brand-teal hover:from-brand-purple/90 hover:to-brand-teal/90 text-white w-full flex items-center justify-center gap-2 mt-4 py-6 rounded-xl shadow-lg">
               <Phone size={18} />
               <span className="font-medium">התקשרו עכשיו</span>
             </Button>
