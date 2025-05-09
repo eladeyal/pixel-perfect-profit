@@ -39,21 +39,26 @@ const Testimonials = () => {
     <section className="py-16 md:py-24 bg-white">
       <div className="section-container">
         <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1 bg-brand-purple/10 text-brand-purple rounded-full mb-4 font-medium">
+            חוות דעת
+          </span>
           <h2 className="heading-lg mb-4">מה הלקוחות אומרים</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="paragraph-lg text-brand-slate/80 max-w-3xl mx-auto">
             הסטנדרטים הגבוהים שלנו באים לידי ביטוי בחוויות המרוצות של לקוחותינו
           </p>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="bg-gray-50 rounded-2xl shadow-lg p-8 md:p-12">
+          <div className="bg-gradient-to-r from-brand-purple/5 to-brand-teal/5 rounded-2xl shadow-elegant p-8 md:p-12">
             <div className="flex flex-col items-center text-center">
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-6 bg-gray-200">
-                <img 
-                  src={testimonials[activeSlide].image} 
-                  alt={testimonials[activeSlide].name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-20 h-20 rounded-full overflow-hidden mb-6 bg-gradient-primary p-1">
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <img 
+                    src={testimonials[activeSlide].image} 
+                    alt={testimonials[activeSlide].name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
 
               <div className="flex mb-4">
@@ -61,12 +66,12 @@ const Testimonials = () => {
                   <Star
                     key={index}
                     size={20}
-                    className={index < testimonials[activeSlide].rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}
+                    className={index < testimonials[activeSlide].rating ? "text-brand-teal fill-brand-teal" : "text-gray-300"}
                   />
                 ))}
               </div>
 
-              <p className="text-xl italic mb-6">"{testimonials[activeSlide].text}"</p>
+              <p className="text-xl italic mb-6 rtl-text">"{testimonials[activeSlide].text}"</p>
               
               <h4 className="font-bold text-lg">{testimonials[activeSlide].name}</h4>
             </div>
@@ -76,7 +81,7 @@ const Testimonials = () => {
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full border-brand-orange text-brand-orange hover:bg-brand-orange/10"
+              className="rounded-full border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant"
               onClick={handlePrevSlide}
             >
               <ArrowLeft size={20} />
@@ -84,7 +89,7 @@ const Testimonials = () => {
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full border-brand-orange text-brand-orange hover:bg-brand-orange/10"
+              className="rounded-full border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant"
               onClick={handleNextSlide}
             >
               <ArrowRight size={20} />

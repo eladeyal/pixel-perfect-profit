@@ -53,30 +53,33 @@ const Services = () => {
     <section className="py-16 md:py-24 bg-white" id="services">
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="heading-lg mb-4">השירותים שלנו</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <span className="inline-block px-4 py-1 bg-brand-purple/10 text-brand-purple rounded-full mb-4 font-medium">
+            השירותים שלנו
+          </span>
+          <h2 className="heading-lg mb-4">פתרונות ניקיון מקצועיים</h2>
+          <p className="paragraph-lg text-brand-slate/80 max-w-3xl mx-auto">
             אנו מציעים מגוון רחב של שירותי ניקיון מקצועיים, תוך שימוש בחומרים אקולוגיים וטכנולוגיה מתקדמת
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="service-card overflow-hidden">
+            <div key={index} className="service-card overflow-hidden group">
               <div className="flex flex-col h-full">
                 <div className="mb-6 rounded-lg overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="flex-grow text-right" style={{direction: "rtl"}}>
+                <div className="flex-grow rtl-text">
                   <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-gray-700 mb-4">{service.description}</p>
+                  <p className="text-brand-slate/80 mb-4">{service.description}</p>
                   <ul className="space-y-2">
                     {service.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-3">
-                        <CheckCircle size={18} className="text-brand-orange min-w-[18px]" />
+                        <CheckCircle size={18} className="text-brand-teal min-w-[18px]" />
                         <span>{feature}</span>
                       </li>
                     ))}

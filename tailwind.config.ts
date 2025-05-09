@@ -64,10 +64,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 brand: {
-                    peach: '#FEC6A1',
-                    yellow: '#FFE29F',
-                    orange: '#F97316',
-                    lightorange: '#FDE1D3',
+                    teal: '#33C3F0',
+                    purple: '#9b87f5',
+                    darkPurple: '#7E69AB',
+                    slate: '#1A1F2C',
+                    pink: '#D946EF',
+                    gray: '#8E9196',
+                    lightGray: '#F1F1F1',
                 }
 			},
 			borderRadius: {
@@ -132,6 +135,22 @@ export default {
                         opacity: '1'
                     }
                 },
+                'float': {
+                    '0%, 100%': {
+                        transform: 'translateY(0)'
+                    },
+                    '50%': {
+                        transform: 'translateY(-8px)'
+                    }
+                },
+                'shimmer': {
+                    '0%': {
+                        backgroundPosition: '-500px 0'
+                    },
+                    '100%': {
+                        backgroundPosition: '500px 0'
+                    }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -140,14 +159,26 @@ export default {
                 'fade-in-left': 'fade-in-left 0.7s ease-out forwards',
                 'fade-in-right': 'fade-in-right 0.7s ease-out forwards',
                 'scale-in': 'scale-in 0.5s ease-out forwards',
+                'float': 'float 6s ease-in-out infinite',
+                'shimmer': 'shimmer 2s infinite linear'
 			},
             fontFamily: {
-                'sans': ['Poppins', 'sans-serif'],
+                'sans': ['Inter', 'sans-serif'],
                 'serif': ['Playfair Display', 'serif'],
+                'display': ['Montserrat', 'sans-serif'],
             },
             backgroundImage: {
-                'gradient-primary': 'linear-gradient(135deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%)',
-                'gradient-secondary': 'linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%)',
+                'gradient-primary': 'linear-gradient(135deg, #9b87f5 0%, #D946EF 100%)',
+                'gradient-secondary': 'linear-gradient(to right, #33C3F0 0%, #9b87f5 100%)',
+                'gradient-overlay': 'linear-gradient(180deg, rgba(26,31,44,0) 0%, rgba(26,31,44,0.8) 100%)'
+            },
+            boxShadow: {
+                'elegant': '0px 8px 24px rgba(26, 31, 44, 0.08)',
+                'hover': '0px 16px 40px rgba(26, 31, 44, 0.12)',
+                'card': '0 4px 12px rgba(26, 31, 44, 0.05)'
+            },
+            maxWidth: {
+                'content': '1128px'
             }
 		}
 	},

@@ -34,54 +34,57 @@ const BeforeAfterGallery = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-secondary/10 overflow-hidden">
       <div className="section-container">
         <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1 bg-brand-purple/10 text-brand-purple rounded-full mb-4 font-medium">
+            התוצאות מדברות
+          </span>
           <h2 className="heading-lg mb-4">לפני ואחרי</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="paragraph-lg text-brand-slate/80 max-w-3xl mx-auto">
             תוצאות מרשימות שמדברות בעד עצמן - ראו את ההבדל בעצמכם
           </p>
         </div>
 
-        <div className="relative">
-          <div className="flex max-w-5xl mx-auto gap-4 md:gap-8">
-            <div className="w-1/2 overflow-hidden rounded-lg shadow-lg">
-              <div className="relative">
+        <div className="relative max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+            <div className="w-full md:w-1/2 overflow-hidden rounded-xl shadow-elegant">
+              <div className="relative group">
                 <img 
                   src={galleryItems[activeIndex].before} 
                   alt="Before cleaning" 
-                  className="w-full h-auto"
+                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-4 right-4 bg-white/80 px-3 py-1 rounded-full">
-                  <span className="text-brand-orange font-bold">לפני</span>
+                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full shadow-elegant">
+                  <span className="text-brand-slate font-bold">לפני</span>
                 </div>
               </div>
             </div>
 
-            <div className="w-1/2 overflow-hidden rounded-lg shadow-lg">
-              <div className="relative">
+            <div className="w-full md:w-1/2 overflow-hidden rounded-xl shadow-elegant">
+              <div className="relative group">
                 <img 
                   src={galleryItems[activeIndex].after} 
                   alt="After cleaning" 
-                  className="w-full h-auto"
+                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-4 right-4 bg-brand-orange/90 px-3 py-1 rounded-full">
+                <div className="absolute top-4 right-4 bg-gradient-primary px-3 py-1 rounded-full shadow-elegant">
                   <span className="text-white font-bold">אחרי</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="text-center mt-6">
+          <div className="mt-8 p-6 bg-white rounded-xl shadow-elegant rtl-text">
             <h3 className="text-xl font-bold">{galleryItems[activeIndex].title}</h3>
-            <p className="text-gray-600">{galleryItems[activeIndex].description}</p>
+            <p className="text-brand-slate/80 mt-2">{galleryItems[activeIndex].description}</p>
           </div>
 
           <div className="flex justify-center mt-8 gap-4">
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full border-brand-orange text-brand-orange hover:bg-brand-orange/10"
+              className="rounded-full border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant"
               onClick={handlePrev}
             >
               <ArrowLeft size={20} />
@@ -89,7 +92,7 @@ const BeforeAfterGallery = () => {
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full border-brand-orange text-brand-orange hover:bg-brand-orange/10"
+              className="rounded-full border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant"
               onClick={handleNext}
             >
               <ArrowRight size={20} />
