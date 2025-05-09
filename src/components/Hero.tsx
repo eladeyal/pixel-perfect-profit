@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const Hero = () => {
-  const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const elementsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,12 +31,12 @@ const Hero = () => {
       <div className="container max-w-content mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-24 gap-16 items-center">
           <div className="lg:col-span-13 text-right lg:order-2 rtl-text">
-            <span 
+            <div 
               className="inline-block px-4 py-2 bg-brand-gold/10 text-brand-gold rounded-md mb-8 font-medium reveal-on-scroll"
               ref={el => elementsRef.current[0] = el}
             >
               המקצוענים בניקיון ריפודים
-            </span>
+            </div>
             <h1 className="heading-xl mb-8 reveal-on-scroll" style={{animationDelay: "0.1s"}} ref={el => elementsRef.current[1] = el}>
               <span className="text-gradient">ניקוי מקצועי</span> לספות, ריפודים ושטיחים
             </h1>
