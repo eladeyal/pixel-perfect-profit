@@ -15,7 +15,7 @@ export default {
 			center: true,
 			padding: '2rem',
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1280px'
 			}
 		},
 		extend: {
@@ -64,13 +64,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 brand: {
-                    teal: '#33C3F0',
-                    purple: '#9b87f5',
-                    darkPurple: '#7E69AB',
-                    slate: '#1A1F2C',
-                    pink: '#D946EF',
-                    gray: '#8E9196',
-                    lightGray: '#F1F1F1',
+                    gold: 'hsl(var(--brand-gold))',
+                    navy: 'hsl(var(--brand-navy))',
+                    blue: 'hsl(var(--brand-blue))',
+                    cream: 'hsl(var(--brand-cream))',
+                    charcoal: 'hsl(var(--brand-charcoal))',
                 }
 			},
 			borderRadius: {
@@ -98,7 +96,7 @@ export default {
                 'fade-in': {
                     '0%': {
                         opacity: '0',
-                        transform: 'translateY(10px)'
+                        transform: 'translateY(8px)'
                     },
                     '100%': {
                         opacity: '1',
@@ -108,7 +106,7 @@ export default {
                 'fade-in-left': {
                     '0%': {
                         opacity: '0',
-                        transform: 'translateX(-20px)'
+                        transform: 'translateX(-16px)'
                     },
                     '100%': {
                         opacity: '1',
@@ -118,7 +116,7 @@ export default {
                 'fade-in-right': {
                     '0%': {
                         opacity: '0',
-                        transform: 'translateX(20px)'
+                        transform: 'translateX(16px)'
                     },
                     '100%': {
                         opacity: '1',
@@ -127,7 +125,7 @@ export default {
                 },
                 'scale-in': {
                     '0%': {
-                        transform: 'scale(0.95)',
+                        transform: 'scale(0.98)',
                         opacity: '0'
                     },
                     '100%': {
@@ -155,30 +153,30 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-                'fade-in': 'fade-in 0.7s ease-out forwards',
-                'fade-in-left': 'fade-in-left 0.7s ease-out forwards',
-                'fade-in-right': 'fade-in-right 0.7s ease-out forwards',
-                'scale-in': 'scale-in 0.5s ease-out forwards',
+                'fade-in': 'fade-in 0.8s ease-out forwards',
+                'fade-in-left': 'fade-in-left 0.8s ease-out forwards',
+                'fade-in-right': 'fade-in-right 0.8s ease-out forwards',
+                'scale-in': 'scale-in 0.6s ease-out forwards',
                 'float': 'float 6s ease-in-out infinite',
                 'shimmer': 'shimmer 2s infinite linear'
 			},
             fontFamily: {
-                'sans': ['Inter', 'sans-serif'],
+                'sans': ['Montserrat', 'sans-serif'],
                 'serif': ['Playfair Display', 'serif'],
-                'display': ['Montserrat', 'sans-serif'],
+                'display': ['Playfair Display', 'serif'],
             },
             backgroundImage: {
-                'gradient-primary': 'linear-gradient(135deg, #9b87f5 0%, #D946EF 100%)',
-                'gradient-secondary': 'linear-gradient(to right, #33C3F0 0%, #9b87f5 100%)',
-                'gradient-overlay': 'linear-gradient(180deg, rgba(26,31,44,0) 0%, rgba(26,31,44,0.8) 100%)'
+                'gradient-primary': 'linear-gradient(135deg, hsl(var(--brand-gold)) 0%, hsl(var(--brand-blue)) 100%)',
+                'gradient-secondary': 'linear-gradient(to right, hsl(var(--brand-blue)) 0%, hsl(var(--brand-gold)) 100%)',
+                'gradient-overlay': 'linear-gradient(180deg, rgba(33,43,54,0) 0%, rgba(33,43,54,0.8) 100%)'
             },
             boxShadow: {
-                'elegant': '0px 8px 24px rgba(26, 31, 44, 0.08)',
-                'hover': '0px 16px 40px rgba(26, 31, 44, 0.12)',
-                'card': '0 4px 12px rgba(26, 31, 44, 0.05)'
+                'elegant': '0px 8px 24px rgba(0, 0, 0, 0.04), 0px 2px 8px rgba(0, 0, 0, 0.02)',
+                'hover': '0px 16px 48px rgba(0, 0, 0, 0.08), 0px 8px 24px rgba(0, 0, 0, 0.04)',
+                'card': '0 4px 12px rgba(0, 0, 0, 0.03)'
             },
             maxWidth: {
-                'content': '1128px'
+                'content': '1280px'
             }
 		}
 	},

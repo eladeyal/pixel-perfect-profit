@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Star, ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -35,33 +35,53 @@ const Testimonials = () => {
     setActiveSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".reveal-on-scroll");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="py-32 md:py-48 bg-white">
       <div className="section-container">
-        <div className="text-center mb-20">
-          <span className="inline-block px-4 py-1 bg-brand-purple/10 text-brand-purple rounded-full mb-4 font-medium">
+        <div className="text-center mb-24 reveal-on-scroll">
+          <span className="inline-block px-4 py-2 bg-brand-navy/5 text-brand-navy rounded-md mb-8 font-medium">
             חוות דעת
           </span>
-          <h2 className="heading-lg mb-6">
+          <h2 className="heading-lg mb-8">
             <span className="text-gradient">מה הלקוחות</span> אומרים
-            <div className="h-1 w-24 bg-gradient-to-r from-brand-purple to-brand-teal rounded-full mx-auto mt-4"></div>
+            <div className="h-0.5 w-24 bg-gradient-to-r from-brand-gold to-brand-blue rounded-full mx-auto mt-8"></div>
           </h2>
-          <p className="paragraph-lg text-brand-slate/80 max-w-3xl mx-auto">
+          <p className="paragraph-lg text-brand-charcoal/80 max-w-3xl mx-auto">
             הסטנדרטים הגבוהים שלנו באים לידי ביטוי בחוויות המרוצות של לקוחותינו
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="premium-gradient rounded-2xl shadow-xl p-10 md:p-16">
-            <div className="absolute top-8 right-8 opacity-20">
-              <Quote size={60} className="text-brand-purple" />
+        <div className="relative max-w-4xl mx-auto reveal-on-scroll">
+          <div className="premium-gradient rounded-xl shadow-xl p-16 md:p-24">
+            <div className="absolute top-12 right-12 opacity-20">
+              <Quote size={64} className="text-white" />
             </div>
-            <div className="absolute bottom-8 left-8 opacity-20">
-              <Quote size={60} className="text-brand-teal rotate-180" />
+            <div className="absolute bottom-12 left-12 opacity-20">
+              <Quote size={64} className="text-white rotate-180" />
             </div>
             
             <div className="flex flex-col items-center text-center relative z-10">
-              <div className="w-24 h-24 rounded-full overflow-hidden mb-8 bg-gradient-to-r from-brand-purple to-brand-teal p-1">
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-10 bg-gradient-to-r from-brand-gold to-brand-blue p-1">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white">
                   <img 
                     src={testimonials[activeSlide].image} 
@@ -71,27 +91,27 @@ const Testimonials = () => {
                 </div>
               </div>
 
-              <div className="flex mb-6">
+              <div className="flex mb-8">
                 {[...Array(5)].map((_, index) => (
                   <Star
                     key={index}
                     size={24}
-                    className={index < testimonials[activeSlide].rating ? "text-brand-teal fill-brand-teal" : "text-gray-300"}
+                    className={index < testimonials[activeSlide].rating ? "text-brand-gold fill-brand-gold" : "text-gray-300"}
                   />
                 ))}
               </div>
 
-              <p className="text-2xl italic mb-8 rtl-text font-light">"{testimonials[activeSlide].text}"</p>
+              <p className="text-2xl italic mb-10 rtl-text font-light text-white">""{testimonials[activeSlide].text}""</p>
               
-              <h4 className="font-bold text-xl">{testimonials[activeSlide].name}</h4>
+              <h4 className="font-bold text-xl text-white">{testimonials[activeSlide].name}</h4>
             </div>
           </div>
 
-          <div className="flex justify-center mt-10 gap-4">
+          <div className="flex justify-center mt-12 gap-4">
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full border-2 border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant h-14 w-14"
+              className="rounded-full border border-brand-navy text-brand-navy hover:bg-brand-navy/5 shadow-elegant h-14 w-14"
               onClick={handlePrevSlide}
             >
               <ArrowLeft size={24} />
@@ -99,7 +119,7 @@ const Testimonials = () => {
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full border-2 border-brand-purple text-brand-purple hover:bg-brand-purple/10 shadow-elegant h-14 w-14"
+              className="rounded-full border border-brand-navy text-brand-navy hover:bg-brand-navy/5 shadow-elegant h-14 w-14"
               onClick={handleNextSlide}
             >
               <ArrowRight size={24} />
